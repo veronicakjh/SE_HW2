@@ -1,0 +1,20 @@
+schema: library
+
+
+table: user
+
+sid		INT(11)		PK	NN
+pw		INT(11)			NN
+name		VARCHAR(40)		NN
+major		VARCHAR(40)		NN
+
+
+
+table: book
+
+bname		VARCHAR(80)		NN
+author		VARCHAR(40)		NN
+publisher	VARCHAR(40)		NN
+ISBN		INT(11)		PK	NN
+availability	VARCHAR(2)		NN
+renting_stud	VARCHAR(40)		NN
