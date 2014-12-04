@@ -1,9 +1,12 @@
 package library;
 import java.io.*;
+import java.sql.*;
 
 
 public class MainMenu2 {
-	public void mainmenu2() throws IOException{ 
+	public void mainmenu2() throws IOException, SQLException{ 
+
+		
 		
 		InputStreamReader sr=new InputStreamReader(System.in);
 		BufferedReader br=new BufferedReader(sr);
