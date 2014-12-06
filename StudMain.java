@@ -1,10 +1,11 @@
 package Stud;
 
 import java.io.*;
+import java.sql.*;
 
 public class StudMain {
 
-	public void studmain() throws IOException{
+	public void studmain() throws IOException,SQLException{
 		
 		InputStreamReader sr = new InputStreamReader(System.in);
 		BufferedReader br = new BufferedReader(sr);
@@ -36,9 +37,14 @@ public class StudMain {
 					//logout
 					break;
 				}
-				default:
+				default:{
 					System.out.println("다시 입력하세요.");
+					StudMain sm=new StudMain();
+					sm.studmain();
+					}
 			}
+			
+		
 		}	
 	}
 }
