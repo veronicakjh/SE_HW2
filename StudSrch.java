@@ -8,12 +8,21 @@ public class StudSrch {
 	StudSrch() throws IOException, SQLException{
 		try{
 			Class.forName("com.mysql.jdbc.Driver");
+<<<<<<< HEAD
 		}
 		catch(ClassNotFoundException e){
+=======
+		}catch(ClassNotFoundException e){
+>>>>>>> origin/Student
 			e.printStackTrace();
 		}
 	}
 	
+<<<<<<< HEAD
+=======
+	//도서 검색 할 때 입력하는 도서명이 2자 미만이거나 20자가 넘으면 다시 입력 받도록 한다.
+	
+>>>>>>> origin/Student
 	public void studsrch() throws IOException, SQLException{
 		
 		String bname, availability, renting_stud;
@@ -36,6 +45,7 @@ public class StudSrch {
 		System.out.println("---------------------------");
 		System.out.println("도서 검색");
 		System.out.println("---------------------------");
+<<<<<<< HEAD
 			
 		System.out.println("찾고 싶은 도서 제목을 입력해주세요.");
 		System.out.print("> ");
@@ -75,29 +85,30 @@ public class StudSrch {
 				System.out.print("> ");
 //오늘11시			
 				int button = Integer.parseInt(br.readLine());
+=======
+>>>>>>> origin/Student
 			
-				switch(button)
-				{
-					case 1:
-					{
-						StudSrch ss = new StudSrch();
-						ss.studbrrw();
-						break;
-					}
-					case 2:
-					{
-					
-						break;
-					}
-					default:
-						System.out.println("다시 입력하세요.");
-				}
+		System.out.println("찾고 싶은 도서 제목을 입력해주세요.");
+		System.out.print("> ");
+		
+		bname=br.readLine();
+		
+		if(bname.length()<2 && bname.length()>20)
+			System.out.println("찾고 싶은 도서 제목을 입력해주세요.(단, 2자 이상 20자 이하 내로 작성해주세요.)");
+		else{
+			sql="select * from book where bname=?";
+			ps=conn.prepareStatement(sql);
+			ps.setString(1,bname);
+			rs=ps.executeQuery();
+						
+			int i=0;
+			while(rs.next()){
+				System.out.println(i+". 도서명 "+rs.getString(1));
+				System.out.println("저자: "+rs.getString(2));
+				System.out.println("출판사: "+rs.getString(3));
+				System.out.println("ISBN: "+rs.getInt(4));
+				System.out.println("대출가능여부: "+rs.getString(5));
+				System.out.println("대여자: "+rs.getString(6));
 			}
 	}
-		
-	public void studbrrw(){
-		System.out.println("---------------------------");	
-		System.out.println("성공적으로 도서 대여가 완료되었습니다.");
-	}
 }
-

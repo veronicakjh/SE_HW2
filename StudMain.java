@@ -41,7 +41,11 @@ public class StudMain {
 					System.out.println("다시 입력하세요.");
 					StudMain sm=new StudMain();
 					sm.studmain();
+<<<<<<< HEAD
 					}
+=======
+				}
+>>>>>>> origin/Student
 			}
 			
 		
