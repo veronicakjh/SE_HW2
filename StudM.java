@@ -23,6 +23,4 @@ public class StudM {
 		StudMain sm=new StudMain();
 		sm.studmain();
 	}
-	
-	
 }

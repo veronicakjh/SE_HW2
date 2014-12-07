@@ -40,22 +40,26 @@ public class StudSrch {
 			
 		System.out.println("찾고 싶은 도서 제목을 입력해주세요.");
 		System.out.print("> ");
-			
+		
 		bname=br.readLine();
-		sql="select * from book where bname=?";
-		ps=conn.prepareStatement(sql);
-		ps.setString(1,bname);
-		rs=ps.executeQuery();
-			
-			
-		int i=0;
-		while(rs.next()){
+		
+		if(bname.length()<2 && bname.length()>20)
+			System.out.println("찾고 싶은 도서 제목을 입력해주세요.(단, 2자 이상 20자 이하 내로 작성해주세요.)");
+		else{
+			sql="select * from book where bname=?";
+			ps=conn.prepareStatement(sql);
+			ps.setString(1,bname);
+			rs=ps.executeQuery();
+						
+			int i=0;
+			while(rs.next()){
 				System.out.println(i+". 도서명 "+rs.getString(1));
 				System.out.println("저자: "+rs.getString(2));
 				System.out.println("출판사: "+rs.getString(3));
 				System.out.println("ISBN: "+rs.getInt(4));
 				System.out.println("대출가능여부: "+rs.getString(5));
 				System.out.println("대여자: "+rs.getString(6));
+			}
 		}
 	}
 }

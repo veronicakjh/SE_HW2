@@ -54,6 +54,7 @@ public class StudBrrw {
 			System.out.print("> ");
 //오늘11시			
 			int button = Integer.parseInt(br.readLine());
+			StudBrbk sbb = new StudBrbk();
 			
 			switch(button)
 			{
@@ -62,13 +63,13 @@ public class StudBrrw {
 				case 1:
 				{
 					if(rs.getString(5)=="N"){
-						System.out.println("이미 다른 학생이 대여 중입니다. 다시 선택하세요.");
+						System.out.println("이미 다른 학생이 대여 중입니다. 다른 책을 검색하세요.");
 						StudSrch ss = new StudSrch();
 						ss.studsrch();
 						break;
-					}else if(){
-						
-					}
+					}/*else if(sbb.studbrbk()>=3){//아어케해야하지
+						System.out.println("현재 2권을 이미 대출중입니다. 3권 이상은 빌릴 수 없습니다.");
+					}*/
 					else{	
 						StudBrrw sb = new StudBrrw();
 						sb.studbrrw();
