@@ -55,6 +55,6 @@ public class StudBrbk {
 		}
 	}
 	public void studbkcount(int c){
-		System.out.println("ÃÑ "+studbrbk().count+"±ÇÀ» ´ë¿©ÇÏ¼Ì½À´Ï´Ù.");	
+	;//	System.out.println("ÃÑ "+studbrbk().count+"±ÇÀ» ´ë¿©ÇÏ¼Ì½À´Ï´Ù.");	
 	}
 }
