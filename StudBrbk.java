@@ -4,7 +4,7 @@ import java.io.*;
 import java.sql.*;
 
 public class StudBrbk {
-
+	
 	StudBrbk() throws IOException{
 		try{
 				Class.forName("com.mysql.jdbc.Driver");
@@ -39,11 +39,11 @@ public class StudBrbk {
 		System.out.println("---------------------------");
 		
 		// 여기부터 오늘 11시
-		int i=0; //여기서 i는 sql로 검색이된 숫자
-		if(i<=2){ // 2개만 소유 가능
+		int count=0;//여기서 i는 sql로 검색이된 숫자
+		if(count<=2){ // 2개만 소유 가능
 			while(rs.next()){
-				i++;
-				System.out.println(i+". 도서명: "+rs.getString(1));
+				count++;
+				System.out.println(count+". 도서명: "+rs.getString(1));
 				System.out.println("저자: "+rs.getString(2));
 				System.out.println("출판사: "+rs.getString(3));
 				System.out.println("ISBN: "+rs.getInt(4));
@@ -53,5 +53,8 @@ public class StudBrbk {
 		}else{//여기다가 해야하나?
 			System.out.println("3권 이상을 빌리실 수 없습니다.");
 		}
+	}
+	public void studbkcount(int c){
+		System.out.println("총 "+studbrbk().count+"권을 대여하셨습니다.");	
 	}
 }

@@ -53,6 +53,7 @@ public class StudSrch {
 						
 			int i=0;
 			while(rs.next()){
+				i++;
 				System.out.println(i+". 도서명 "+rs.getString(1));
 				System.out.println("저자: "+rs.getString(2));
 				System.out.println("출판사: "+rs.getString(3));
